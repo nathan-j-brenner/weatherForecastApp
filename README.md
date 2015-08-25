@@ -12,19 +12,5 @@ Call Weather Underground's api (http://www.wunderground.com/weather/api/d/docs).
 Include a "sticky footer" that reads "Powered by Weather Underground", includes their logo, and a link to their site in accordance with their terms of service: http://www.wunderground.com/weather/api/d/terms.html
 The page must be laid out like this and respond to browser resizing to narrower than 320px:
 
-time goals: Be done by 8pm
-
-process:
-1. create gitHub repo
-Build html with bootstrap
-add gulp to build concat scss and javaScript
-Write javaScript with backbone (I want to do this with angular, but I don't have enough time.  If I didn't have to work tomorrow, I'd do it, and I'll do it in the next iteration)
-
-Model attributes: data pulled from weather underground
-	current location
-	date
-	weather
-	3 day forecast
-
-View: The div that will display the model)
+Timeframe: 4:45pm to 12:30am
 

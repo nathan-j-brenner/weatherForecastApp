@@ -1,6 +1,13 @@
 /*current weather*/
+body{
+	background-color: #5FC5E6;
+}
+.todaysWeather, .forecastStretch, #footer{
+	background-color: white;
+}
 .todaysWeather{
-	border: 1px solid black;
+	border: 2px solid black;
+	margin-top:10%;
 }
 .todaysWeather h4{
 	text-align: center;
@@ -61,7 +68,36 @@ body {
   padding: 0 0 60px;
 }
 
-footer {
-  height: 60px;
-  background-color: #f5f5f5;
+#footer {
+  height: 120px;
 }
+#footer .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#footer .container img{
+	width: 50%;
+	margin: auto;
+}
+#footer .container a{
+	text-align: center;
+}
+
+
+/*mobile version*/
+@media (max-width: 320px) {
+	.forecastStretch{
+		flex-direction: column;
+	}
+	.threeDayForcast{
+		width: 100%;
+	}
+	.userInput input{
+		width: 30%;
+	}
+}
+
+
+
+
