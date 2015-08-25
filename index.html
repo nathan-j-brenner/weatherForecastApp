@@ -3,36 +3,63 @@
 <head>
 	<title>weatherApp</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
 	<script type="text/javascript" src="javascript/vendor/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="javascript/vendor/angular.min.js"></script>
 	<script type="text/javascript" src="javascript/weather.js"></script>
 </head>
 <body ng-app="weatherApp">
-	<div ng-controller="mainController">
-		<h1>{{forecast.data[0].day}}
-		<h1>{{forecast.location}}</h1>
-		<img ng-src="{{forecast.data[0].icon}}">
-		<p>{{forecast.data[0].weather}}</p>
-		<p>{{forecast.data[0].temperature}}&degF</p>
-		
-		Zip Code:<input type="text" name="zipCode" ng-model="forecast.zip">
-		<button ng-click="search()">Change</button>
-		
-		<h1>{{forecast.data[1].day}}
-		<img ng-src="{{forecast.data[1].icon}}">
-		<p>{{forecast.data[1].weather}}</p>
-		<p>{{forecast.data[1].temperature}}&degF</p>
-		
-		<h1>{{forecast.data[2].day}}
-		<img ng-src="{{forecast.data[2].icon}}">
-		<p>{{forecast.data[2].weather}}</p>
-		<p>{{forecast.data[2].temperature}}&degF</p>
-		
-		<h1>{{forecast.data[3].day}}
-		<img ng-src="{{forecast.data[3].icon}}">
-		<p>{{forecast.data[3].weather}}</p>
-		<p>{{forecast.data[3].temperature}}&degF</p>
+	<div id="wrap">
+		<div class="container">
+			<div ng-controller="mainController">
+				<div class="todaysWeather">
+					<h4>{{forecast.location}}</h4>
+					<div class="weatherInline">
+						<h2>{{forecast.data[0].day}}</h2>
+						<img ng-src="{{forecast.data[0].icon}}">
+						<div>
+							<h2>{{forecast.data[0].weather}}</h2>
+							<p>{{forecast.data[0].temperature}}&degF</p>
+						</div>
+					</div>
+				</div>
+				<div class="forecastStretch">
+					<div class="threeDayForcast">
+						<div>
+							<img ng-src="{{forecast.data[1].icon}}">
+							<p>{{forecast.data[1].temperature}}&degF</p>
+						</div>
+						<p>{{forecast.data[1].day}}</p>
+					</div>
+					<div class="threeDayForcast">
+						<div>
+							<img ng-src="{{forecast.data[2].icon}}">
+							<p>{{forecast.data[2].temperature}}&degF</p>
+						</div>
+						<p>{{forecast.data[2].day}}</p>
+					</div>
+					<div class="threeDayForcast">
+						<div>
+							<img ng-src="{{forecast.data[3].icon}}">
+							<p>{{forecast.data[3].temperature}}&degF</p>
+						</div>
+						<p>{{forecast.data[3].day}}</p>
+					</div>
+				</div>
+				<div class="userInput">
+					<p>Zip Code:</p>
+					<input type="text" name="zipCode" ng-model="forecast.zip">
+					<button type="button" class="btn btn-primary" ng-click="search()">Change</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="container">
+			<a href="http://www.wunderground.com/weather/api/d/terms.html">Powered by Weather Underground</a>
+			<img src="http://icons.wxug.com/logos/JPG/wundergroundLogo_4c_horz.jpg">
+		</div>
 	</div>
 	<!-- Modules -->
 	<script type="text/javascript" src="javascript/app.js"></script>
