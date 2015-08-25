@@ -3,7 +3,6 @@ console.log(apiKey);
 
 //model
 
-
 //view
 $.ajax({
 url : "http://api.wunderground.com/api/4b5bc62190721dd9/geolookup/conditions/q/IA/Cedar_Rapids.json",
