@@ -35,10 +35,8 @@ app.controller('mainController', ['$scope', 'forecast', '$http', function($scope
 		};
 	});
 	$scope.search = function(){
-		console.log($scope.forecast.location);
 		return $http.get('http://api.wunderground.com/api/' + apiKey + '/geolookup/forecast/conditions/q/IA/' + $scope.forecast.zip + '.json')
 		.success(function(data){
-			console.log('get request');
 			// return data;
 			$scope.forecast = {
 				location: data.current_observation.display_location.full,
