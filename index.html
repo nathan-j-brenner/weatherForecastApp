@@ -3,16 +3,23 @@
 <head>
 	<title>weatherApp</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
-	<script type="text/javascript" src="javascript/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="javascript/underscore.js"></script>
-	<script type="text/javascript" src="javascript/backbone.js"></script>
+	<!--<script type="text/javascript" src="javascript/vendor/jquery-2.1.4.min.js"></script>
+	// <script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.js"></script>-->
+	<script type="text/javascript" src="javascript/vendor/angular.min.js"></script>
+	<script type="text/javascript" src="javascript/weather.js"></script>
 </head>
-<body>
-	<div class="view"></div>
+<body ng-app="weatherApp">
+	<div ng-controller="mainController">
+		<h1>{{fiveDay.city_name}}</h1>
+	</div>
 	Zip Code:<input type="text" name="zipCode">
 	<input type="submit" value="change">
-	<script type="text/javascript" src="javascript/weather.js"></script>
-	<script type="text/javascript" src="javascript/main.js"></script>
+	<!-- Modules -->
+	<script type="text/javascript" src="javascript/app.js"></script>
+	<!-- Controllers -->
+	<script type="text/javascript" src="javascript/controllers/mainController.js"></script>
+	<!-- Services -->
+	<script type="text/javascript" src="javascript/services/forecast.js"></script>
+	<!-- Directives -->
 </body>
 </html>
