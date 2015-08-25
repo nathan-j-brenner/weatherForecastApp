@@ -10,13 +10,19 @@
 </head>
 <body ng-app="weatherApp">
 	<div ng-controller="mainController">
+		<h1>{{forecast.data[0].day}}
 		<h1>{{forecast.location}}</h1>
-		<img ng-src="{{forecast.icon}}">
-		<p>{{forecast.weather}}</p>
-		<p>{{forecast.temperature}}&degF</p>
-		<forecastData info="forecast"></forecastData>
+		<img ng-src="{{forecast.data[0].icon}}">
+		<p>{{forecast.data[0].weather}}</p>
+		<p>{{forecast.data[0].temperature}}&degF</p>
 		Zip Code:<input type="text" name="zipCode" ng-model="forecast.zip">
 		<button ng-click="search()">Change</button>
+		<p>{{forecast.data}}</p>
+		<h1>{{forecast.data[1].day}}
+		<h1>{{forecast.location}}</h1>
+		<img ng-src="{{forecast.data[1].icon}}">
+		<p>{{forecast.data[1].weather}}</p>
+		<p>{{forecast.data[1].temperature}}&degF</p>
 	</div>
 	<!-- Modules -->
 	<script type="text/javascript" src="javascript/app.js"></script>
