@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="style/main2.css">
+  <script type="text/javascript" src="javascript/vendor/angular.min.js"></script>
+  <script type="text/javascript" src="javascript/weather.js"></script>
+  <meta charset="utf-8">
+  <title>iteration 2</title>
+</head>
+<body ng-app="weatherApp">
+  <div class='container' ng-controller="mainController">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 header">
+        <div class="row">
+            <div class="col-md-4">
+              <h1>{{forecast.today.day}}</h1>
+            </div>
+            <div class="col-md-4">
+              <h4>{{forecast.location}}</h4>
+              <img ng-src="{{forecast.today.icon}}">
+            </div>
+            <div class="col-md-4">
+              <h2>{{forecast.today.weather}}</h2>
+              <p>{{forecast.today.temperature}}&degF</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-3 col-sm-2 col-sm-offset-3 day">
+        <div>
+          <img ng-src="{{forecast.days[0].icon}}">
+          <p>{{forecast.days[0].temperature}}&degF</p>
+        </div>
+          <p>{{forecast.days[0].day}}</p>
+      </div>
+      <div class="col-md-2 col-sm-2 day">
+        <div>
+          <img ng-src="{{forecast.days[1].icon}}">
+          <p>{{forecast.days[1].temperature}}&degF</p>
+        </div>
+          <p>{{forecast.days[1].day}}</p>
+      </div>
+      <div class="col-md-2 col-sm-2 day">
+        <div>
+          <img ng-src="{{forecast.days[2].icon}}">
+          <p>{{forecast.days[2].temperature}}&degF</p>
+        </div>
+          <p>{{forecast.days[2].day}}</p>
+      </div>
+    </div>
+    <div class="row userInput">
+      <div class="col-md-4 col-md-offset-4">
+        Zip Code:<input type="text" name="zipCode" ng-model="forecast.zip">
+        <button type="button" class="btn btn-primary" ng-click="search()">Change</button>
+      </div>
+    </div>
+  </div>
+    <!-- Modules -->
+  <script type="text/javascript" src="javascript/app.js"></script>
+  <!-- Controllers -->
+  <script type="text/javascript" src="javascript/controllers/mainController.js"></script>
+  <!-- Services -->
+  <script type="text/javascript" src="javascript/services/forecast.js"></script>
+</body>
+</html>

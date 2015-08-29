@@ -12,27 +12,27 @@
 <body ng-app="weatherApp">
 	<div id="wrap">
 		<div class="container">
-			<div ng-controller="mainController">
+			<div class="row" ng-controller="mainController">
 				<div class="todaysWeather">
 					<h4>{{forecast.location}}</h4>
 					<div class="weatherInline">
-						<h2>{{forecast.data[0].day}}</h2>
-						<img ng-src="{{forecast.data[0].icon}}">
+						<h2>{{forecast.today.day}}</h2>
+						<img ng-src="{{forecast.today.icon}}">
 						<div>
-							<h2>{{forecast.data[0].weather}}</h2>
-							<p>{{forecast.data[0].temperature}}&degF</p>
+							<h2>{{forecast.today.weather}}</h2>
+							<p>{{forecast.today.temperature}}&degF</p>
 						</div>
 					</div>
 				</div>
-				<div class="forecastStretch">
-					<div class="threeDayForcast">
+				<div class="forecastStretch row" ng-repeat="day in forecast.days">
+					<div class="col-sm-4">
 						<div>
-							<img ng-src="{{forecast.data[1].icon}}">
-							<p>{{forecast.data[1].temperature}}&degF</p>
+							<img ng-src="{{day.icon}}">
+							<p>{{day.temperature}}&degF</p>
 						</div>
-						<p>{{forecast.data[1].day}}</p>
+						<p>{{day.day}}</p>
 					</div>
-					<div class="threeDayForcast">
+					<!-- <div class="threeDayForcast">
 						<div>
 							<img ng-src="{{forecast.data[2].icon}}">
 							<p>{{forecast.data[2].temperature}}&degF</p>
@@ -45,7 +45,7 @@
 							<p>{{forecast.data[3].temperature}}&degF</p>
 						</div>
 						<p>{{forecast.data[3].day}}</p>
-					</div>
+					</div> -->
 				</div>
 				<div class="userInput">
 					<p>Zip Code:</p>

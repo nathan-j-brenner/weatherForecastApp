@@ -6,13 +6,14 @@ app.controller('mainController', ['$scope', 'forecast', '$http', function($scope
 			temperature: data.current_observation.temp_f,
 			weather: data.current_observation.weather,
 			icon: data.current_observation.icon_url,
-			data:[
+			today:
 				{
 					day: 'Today',
 					temperature: data.current_observation.temp_f,
 					weather: data.current_observation.weather,
 					icon: data.current_observation.icon_url,
 				},
+			days: [
 				{
 					day: data.forecast.simpleforecast.forecastday[1].date.weekday,
 					temperature: data.forecast.simpleforecast.forecastday[1].high.fahrenheit,

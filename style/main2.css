@@ -1,0 +1,12 @@
+.container{
+	margin-top: 10%;
+}
+.header{
+  text-align: center;
+  border: 1px solid black;
+}
+.day{
+  text-align: center;
+  border: 1px solid black;
+  padding-top: 3%;
+}
